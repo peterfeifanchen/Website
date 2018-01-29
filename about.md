@@ -20,7 +20,7 @@ body {
 
 As one of my friend puts it, this blog of my running stream of consciousness on topics in economics, 
 computer science and society may potentially burn most of my social capital. However, I believe dissident 
-ideas are what have always pushed the  world forward. If certain posts makes you angry, I invite you to 
+ideas are what have always pushed the  world forward. If certain posts make you angry, I invite you to 
 ask yourself why, instead of spreading that anger. Further, if you feel deeply offended by the content of 
 some posts, I highly recommend that you periodically look in the mirror and make attempts at laughing at
 yourself. Given that a blog is a function that etches living ideas onto static vessels, and the fact that
@@ -56,3 +56,10 @@ snowboarding, bouldering, learning French and travelling.
 
 <span style="color:red">Warning:</span> I do not believe I am especially gifted in any of these topics.
 Expert opinions should always be sourced from those who don't have to write their own wikipedia pages.
+
+<style>
+body {
+ text-align: left;
+ text-justify: none;
+}
+</style>
