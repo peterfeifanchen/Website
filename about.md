@@ -47,7 +47,7 @@ and distributed systems, culminating in a couple of failed submissions with topi
 and stateless middleboxes. Efforts to rectify this is still ongoing.
 9. Began dabbling in machine learning and economics, both respectable natural directions to pursue 
 given my background in systems, wireless signal processing and finance. These days you will find me reading 
-papers on systems (OSDI, SOSP, SIGCOMM, EUROSYS, MOBISYS, IEEE Transactions), machine learning (NIPS, CVPR), 
+papers on systems (OSDI, SOSP, SIGCOMM, EUROSYS, MOBISYS, IEEE Transactions), machine learning (NIPS, ICML), 
 and economics (/r/economics) during my morning
 commutes. 
 
