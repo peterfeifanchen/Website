@@ -4,3 +4,9 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 ---
+
+<div class="main">
+	<img src="{{ site.baseurl }}{{ site.main.image }}"/>
+	<p>{{ site.main.caption }}</p>
+</div>
+

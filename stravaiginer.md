@@ -4,15 +4,19 @@ title: Stravaiginer
 permalink: /stravaiginer/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+<hr>
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+<div class="post-section">
+  {% assign cat = page.category %}
+  <ul class="post-list-section">
+  	{% for post in site.categories[cat] %}
+	   <a class="post-list-title" href="{{site.baseurl}}{{post.url}}">
+	   <li>
+	     {{post.title}}
+		 <small class="post-list-date">{{ post.date | date_to_string}}</small>
+	   </li>
+	   </a>
+	{% endfor %}
+  </ul>
+</div>

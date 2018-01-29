@@ -39,3 +39,7 @@ markdown: kramdown
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+main:
+    image: /assets/do-a-brave-thing.jpg
+    caption: do a brave thing
