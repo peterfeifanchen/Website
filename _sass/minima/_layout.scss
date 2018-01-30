@@ -42,7 +42,7 @@
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
-      margin-right: $on-laptop/9.8;
+      margin-right: $on-laptop/13;
     }
   }
 
@@ -247,6 +247,11 @@
       @include relative-font-size(1.125);
     }
   }
+}
+
+.description {
+	text-align: left;
+	text-justify: none;
 }
 
 .main {
