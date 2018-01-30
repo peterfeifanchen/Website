@@ -12,6 +12,86 @@ body {
  text-align: justify;
  text-justify: inter-word;
 }
+* {
+    box-sizing: border-box;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #1E90FF;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.container {
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #1E90FF;
+    top: 0px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+	padding-left: 0px 0px;
+    padding-right: 0px 20px;
+}
+
+.right {
+    left: 50%;
+	padding-left: 0px 20px;
+    padding-right: 0px 0px;
+}
+
+.right::after {
+    left: -16px;
+}
+
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+
+@media all and (max-width: 600px) {
+  .timeline::after {
+    left: 31px;
+  }
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .left::after, .right::after {
+    left: 15px;
+  }
+  .right {
+    left: 0%;
+  }
+}
 </style>
 
 * PhD (LOL? tbd I guess)
