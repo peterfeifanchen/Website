@@ -15,7 +15,12 @@ permalink: /onesandzeros/
 	   <li>
 	     {{post.title}}
 		 <small class="post-list-date">{{ post.date | date_to_string}}</small>
-	   </li>
+		 {% if post.tags[0] == 'Dabbling' %}
+		 <small class="post-tags-blue">{{ post.tags }} </small>
+		 {% elsif post.tags[0] == 'Paper Review' %}
+		 <small class="post-tags-orange">{{ post.tags }} </small>
+		 {% endif %}
+		 </li>
 	   </a>
 	{% endfor %}
   </ul>
