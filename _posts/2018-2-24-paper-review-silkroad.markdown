@@ -148,6 +148,7 @@ An extra level of indirection <span class="variable">DIPPoolTable</span> that tr
 DIP pool table to a specific DIP.
 
 **PCC**
+
 SilkRoad uses transactional memory to implement a bloomfilter called <span class="variable">
 TransitTable</span>. It breaks down a DIP pool update into a 3-step process. 
 
@@ -196,6 +197,7 @@ and DIP pool updates. CPU is connected to the switch via PCI-E.
 <h1>Evaluation</h1>
 
 **Additional Hardware Resources Required**
+
 <figure>
 <img src="/assets/Papers/SilkRoad/hardwareoverhead.jpg">
 <figcaption>Additional usage above switch.P4 baseline</figcaption>
@@ -204,6 +206,7 @@ and DIP pool updates. CPU is connected to the switch via PCI-E.
 Evaluation was performed by mapping P4 onto a Barefoot switch.
 
 **Memory Savings**
+
 <figure>
 <img src="/assets/Papers/SilkRoad/memorysavings.jpg">
 <figcaption>Memory savings and performance improvements over software load balancer</figcaption>
@@ -223,6 +226,7 @@ can replace hundreds of software load balancers represents massive power and cap
 savings. 
 
 **PCC**
+
 <figure>
 <img src="/assets/Papers/SilkRoad/pccresults.jpg">
 <figcaption>Memory savings and performance improvements over software load balancer</figcaption>
@@ -279,7 +283,8 @@ that have not been inserted yet into ConnTable.
 It is interesting to see all these new features that can be implemented directly in hardware,
 especially with the help of the new P4 language. However, it would have helped to know what
 percentage of total hardware resources are taken up already by switch.P4, especially when it 
-is loaded with entries for its other services (e.g., VTEP stuff, ACL lists). This way we can
+is loaded with entries for its other services (e.g., VTEP entires, MAC entries, ACL lists). 
+This way we can
 actually judge whether it is feasible to burden ToR switches with addtional task of L4 load
 balancing. As right now, the table provided only gives incremental usage in additional to 
 switch.P4 and not total resource usage. It is also interesting that as long more and more 
