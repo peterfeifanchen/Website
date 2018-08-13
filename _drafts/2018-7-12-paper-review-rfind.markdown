@@ -52,8 +52,8 @@ effect called fading.
 
 The function s(t) is the transmitted waveform. Mathematically, this contains the information that
 we wish to transmit (modulation), and pulse-shaping (on transmit) or matched filtering (on 
-receive- thepaper will mention this later). The modulation transforms bits into symbols 
-(e.g. MQAM). These symbols are then sent one by one to be pulse-shaper which modifies the signal
+receive - the paper will mention this later). The modulation transforms bits into symbols 
+(e.g. MQAM). These symbols are then sent one by one to the pulse-shaper which modifies the signal
 such that 1) it meets the signals bandwidth limitations and 2) protect it against intersymbol 
 interference when it convolutes with the transmission channel h(t). 
 
@@ -79,20 +79,14 @@ signals usually take place in the Fourier domain.
 **Fourier**
 
 Convolution in the time domain becomes multiplication in the Fourier domain, making analysis
-more tractable. 
-
-The Continuous Time Fourier Transform (CTFT) takes a time domain signal x(t) that may be 
-periodic in T or aperiodic and returns its fourier transform X(jω):
+more tractable. The Continuous Time Fourier Transform (CTFT) takes a time domain signal x(t) that may be periodic in T or aperiodic and returns its fourier transform X(jω):
 
 \\[ X(j\omega) = {\int_{-\infty}^\infty x(t)e^{-jwt} dt} \\]
 \\[ x(t) = {\int_{-\infty}^\infty X(j\omega)e^{jwt} dw} \\]
 
-The fourier transform of a signal exists if x(t) 1) is absolutely integrable, 2) have a finite
-number of maxima/minima within a finite interval (no asymptotes) and 3) finite number of 
-finite discontinuities within a finite interval. Fourier transform can be found by taking the 
-fourier series of a periodic signal and taking the limit of its period T to infinity. In the 
-case where x(t) is periodic, its Fourier transform and its fourier series are equivalent. 
-CTFT are related to fourier series of continuous signals by:
+Fourier transform can be found by taking the fourier series of a periodic signal and taking the 
+limit of its period T to infinity. In the case where x(t) is periodic, its Fourier transform and 
+its fourier series are equivalent. CTFT are related to fourier series of continuous signals by:
 
 \\[ x(t) = {\sum_k a_ke^{jkw_ot}} \\]
 \\[ a_k = \frac{1}{T}X(j\omega)\Bigr|_{w=kw_o} \\]
@@ -104,23 +98,41 @@ discrete time signal into a continuous time signal (on transmit) for transmissio
 channel. Fourier transform for discrete time signals are called Discrete Time Fourier Transforms
 (DTFT):
 
-They are related to CTFT by:
+\\[ x[n] = \frac{1}{2\pi}\int_{2\pi}X(e^{jw})e^{jwn}dw \\]
+\\[ X(e^{jw}) = \sum_{n=-\infty}^{\infty}x[n]e^{-jwn} \\]
 
-Where the discrete time signal must be produced from a sampling rate that is twice the maximum
-bandwidth of a bandlimited signal.
+Like CTFT, DTFT is derived by taking the Discrete Fourier Series (DFS) of a periodic discrete 
+signal with its period taken to infinity. Like DFS, DTFT is periodic over \\( 2\pi \\) since 
+\\( e^{jw} = e^{j(w+2\pi)} \\). It's higher frequency components are around multiples of 
+\\( \pi \\) while lower frequency components are at multiples of \\( 2\pi \\).
+
+The discrete time signal must be produced from a sampling rate that is twice the maximum
+bandwidth of a bandlimited continuous ttime signal (Nyquist Theorem). As sampling in time domain 
+represents a train of delta functions, in the frequency domain, this is equivalent to the 
+convolution of the CTFT of the signal with the CTFT of the delta train 
+\\( X(e^{jw}) = \frac{2\pi}{N}\sum_{k=-\infty}^{\infty}\delta(w-\frac{2{\pi}k}{N}) \\). Here,
+N = T or the sampling period. 
 
 Finally, DTFT is actually transformed into Discrete Fourier Transforms (DFT). This is because
 for DTFT of a discrete time signal is actually continous, this makes digital processing still
-hard. DFT however are discrete both in time and frequency domains.
+hard. DFT however are discrete both in time and frequency domains allowing easy manipulation. A
+detailed description of DFT and its relationship with DTFT can be found 
+[here](http://www.cambridge.org/ba/files/3113/6681/5698/4421_Chapter_12_-_Discrete_Fourier_transform.pdf).
 
-[Wikipedia picture]
+In summation, DFT is the 
 
 [ CTFT->DTFT->DFT experiment ]
-[ Sampling experiment, does down-converting first help? ]
+[ DFT carry-add filter experiment ]
+
+**Pulse Shaping**
+
+**Match Filter**
+
+**Channel Estimation**
 
 **Bandwidth and TOF** 
 
-[ Bandwidth TOF experiment ]
+[ Bandwidth TOF experiment -> Power Delay Profile ]
 
 **RFID** 
 
@@ -129,8 +141,6 @@ hard. DFT however are discrete both in time and frequency domains.
 [ Symbol experiment with Phase Noise and CFO ]
 
 **Basic Antenna Theory**
-
-**Channel Estimation**
 
 <h1>Contribution</h1>
 
