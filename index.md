@@ -8,5 +8,6 @@ layout: home
 <div class="main">
 	<img src="{{ site.baseurl }}{{ site.main.image }}"/>
 	<p>{{ site.main.caption }}</p>
+	<p>This site is currently under construction.</p>
 </div>
 

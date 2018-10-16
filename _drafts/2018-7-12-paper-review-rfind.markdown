@@ -57,8 +57,8 @@ receive - the paper will mention this later). The modulation transforms bits int
 such that 1) it meets the signals bandwidth limitations and 2) protect it against intersymbol 
 interference when it convolutes with the transmission channel h(t). 
 
-[Discontinuity and noise experiment]
-[Spectrum of pulse-shaping with raised cosine vs. square wave experiment]
+<span style="color:blue">[Discontinuity and noise experiment]</span>
+<span style="color:blue">[Spectrum of pulse-shaping with raised cosine vs. square wave experiment]</span>
 
 Below, an example of a two path model is shown. This is what we call <span style="variable">
 multipath</span> nature of wireless signals. While the path loss and attenuation of a signal 
@@ -119,16 +119,48 @@ hard. DFT however are discrete both in time and frequency domains allowing easy 
 detailed description of DFT and its relationship with DTFT can be found 
 [here](http://www.cambridge.org/ba/files/3113/6681/5698/4421_Chapter_12_-_Discrete_Fourier_transform.pdf).
 
-In summation, DFT is the 
+In summation, DFT can be thought of as the DTFT of a windowed time-domain sampled signal which
+is then sampled in the frequency domain at interval of \\( {\Delta}f \\). Like DTFT, DFT are 
+periodic over \\( 2\pi \\). For a M-point DFT, each DFT bin represents \\( \frac{2\pi}{M} \\) 
+for \\( {\Delta}f = \frac{1}{MT_s} \\) where \\( T_s \\) is the sampling rate and 
+\\( \frac{1}{T_s} \\). The equations for DFT then becomes:
 
-[ CTFT->DTFT->DFT experiment ]
-[ DFT carry-add filter experiment ]
+\\[ x[n] = \frac{1}{M}\sum_k^{M-1}X[k]e^{j2{\pi}kn/M} \; for \; 0 \leq k \leq N-1 \\]
+\\[ X[k] = \sum_k^{N-1}X[k]e^{j2{\pi}kn/M} \; for \; 0 \leq k \leq M-1 \\]
+
+The DFT has an interesting property since it is the result of the frequency-space 
+sampling of the signal's DTFT. The sampling caues time-domain signal to be aliased at an 
+interval M. If this interval is longer than the signal length, then no aliasing occurs. 
+DFT is completely described over the interval M. Otherwise, another name for this time domain
+aliasing is circular convolution. This means that for y[n] = x[n] * h[n], when we multiply 
+their DFT, we are performing a circular, not linear convolution, unless the DFT length M is 
+greater than the length of x and h combined. Further, if a signal falls in between two DFT
+bins, rather than a single delta, it becomes a peak spread throughout the adjacent bins. 
+
+<span style="color:blue">[ CTFT->DTFT->DFT experiment ]</span>
+<span style="color:blue">[ DFT carry-add filter experiment ]</span>
 
 **Pulse Shaping**
+Pulse shaping is basically the D/A converter for the baseband signal. Basically, the discrete
+time signal is convoluted with a basic pulse. This can be a on-off (square wave), a sinc or
+the many different combinations in between. The shape of the time-domain pulse must have the
+property of being exactly equal to the discrete time signal at intervals \\( nT_s \\). In a 
+way pulse shaping is similar to low-pass filtering. Ideal pulse will be flat in its passband
+and cut-off sharperly to eliminate leaks into adjacent frequencies. 
+
+<span style="color:blue">[ Pulse Shaping experiment ]</span>
 
 **Match Filter**
+On the receive side, we would like to maximize the signal-to-noise ratio of our desired signal.
+For a given time domain signal \\( y(t) = \int_{-\infty}^{\infty} \\)
+
+More detailed information on matched filters can be found [here](https://dsp.stackexchange.com/questions/9094/understanding-the-matched-filter).
+
+<span style="color:blue">[ Match Filter Experiment ]</span>
 
 **Channel Estimation**
+
+<span style="color:blue">[ Match Filter + Channel Estimation Experiment ]</span>
 
 **Bandwidth and TOF** 
 
@@ -142,15 +174,11 @@ In summation, DFT is the
 
 **Basic Antenna Theory**
 
-<h1>Contribution</h1>
-
 <h1>Solution</h1>
-
 
 <h1>Implementation</h1>
 
-<h1>Evaluation</h1>
+<h1>Tidbits</h1>
 
-<h1>Related Work</h1>
+I got curious on how AoA is calculated. 
 
-<h1>TidBits</h1>

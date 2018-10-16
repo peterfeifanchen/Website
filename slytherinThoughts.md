@@ -3,7 +3,7 @@ layout: page
 title: Slytherin Thoughts
 permalink: /slytherinthoughts/
 ---
-
+<!--
 <div class="post-section"></div>
 As one of my friend once put it, this blog of my running stream of consciousness may contain 
 dissident ideas that may potentially burn most of my social capital with Gryffindors, Ravenclaws
@@ -16,7 +16,7 @@ natural process of personal growth and maturity.
 <span style="color:red">Warning:</span> I do not believe I am especially gifted in any of these 
 topics. Expert opinions should always be sourced from those who do not have to write their own 
 Wikipedia pages.
-
+-->
 <hr>
 
 <div class="post-section">
