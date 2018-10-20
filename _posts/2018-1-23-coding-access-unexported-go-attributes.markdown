@@ -2,7 +2,7 @@
 layout: post
 title:  "Access Unexported Go Attributes"
 date:   2018-1-23 15:40:56 -0800
-categories: systems
+categories: general
 tags: [ Dabbling ]
 ---
 

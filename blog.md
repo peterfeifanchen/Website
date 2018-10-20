@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Ones and Zeros
-category: systems
-permalink: /onesandzeros/
+title: Blog
+category: general
+permalink: /blog/
 ---
 
 <hr>
